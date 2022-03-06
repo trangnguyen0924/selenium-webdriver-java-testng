@@ -51,9 +51,25 @@ public class Topic_02_Locator {
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Trang123456");
 		driver.findElement(By.xpath("//a[@id='btnSubmit']")).click();
 		driver.findElement(By.xpath("//div[@class='text-msg']//div[(text()='Thank you for signing up to HoGo')]")).isDisplayed();
-		
-
 	}
+	@Test
+	public void TC04_check_equal() {
+		Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'up using your Google account')]")).getText(),"Or, simply sign up using your Google account");
+		
+	}
+	@Test
+	public void TC05_check_item() {
+		driver.findElement(By.xpath("//section[@id='socialLinks']//ul//li[2]")).click();
+		
+	}
+//	@Test
+//	public void TC06_check_item() {
+//		driver.findElement(By.xpath("//section[@id='socialLinks']//ul//li[1]")).click();
+//		
+//	}
+	
+
+
 	
 	@AfterClass
 	public void afterClass() {
